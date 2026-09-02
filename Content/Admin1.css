@@ -1,0 +1,744 @@
+﻿/* ==========================================================================
+   Admin.css — File CSS DÙNG CHUNG cho toàn bộ khu vực quản trị IFSOFTOnline
+   Bao gồm: NewsDetail, Login, Menu, NewsCategory
+   ========================================================================== */
+
+/* ==========================================================================
+   0. RESET & BASE — áp dụng chung cho mọi trang
+   ========================================================================== */
+* {
+    box-sizing: border-box;
+}
+body {
+    font-family: "Segoe UI", Tahoma, Arial, sans-serif;
+    font-size: 14px;
+    color: #2b2f38;
+    background-color: #f4f5f7;
+    margin: 0;
+    padding: 0;
+}
+a {
+    color: #2563eb;
+    text-decoration: none;
+}
+    a:hover {
+        text-decoration: underline;
+    }
+/* ==========================================================================
+   1. TRANG DANH SÁCH / CHI TIẾT TIN TỨC — NewsDetail.ascx
+   Bọc trong <div class="newsdetail-page">
+   ========================================================================== */
+
+/* ==================== CSS HOÀN CHỈNH CHO TRANG NEWS DETAIL ==================== */
+.newsdetail-page {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #2b2f38;
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    background-color: #f8fafc;
+}
+    /* Tiêu đề */
+    .newsdetail-page b {
+        font-size: 18px;
+        color: #1e40af;
+        margin-bottom: 20px;
+        display: block;
+    }
+
+    /* ==================== SELECT & INPUT CHUNG ==================== */
+    .newsdetail-page select,
+    .newsdetail-page input[type="text"],
+    .newsdetail-page textarea {
+        padding: 9px 12px;
+        border: 1px solid #d0d5dd;
+        border-radius: 6px;
+        background-color: #ffffff;
+        font-size: 15px;
+        color: #2b2f38;
+    }
+
+        .newsdetail-page select:focus,
+        .newsdetail-page input[type="text"]:focus,
+        .newsdetail-page textarea:focus {
+            outline: none;
+            border-color: #2563eb;
+            box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
+        }
+
+    /* ==================== BẢNG DANH SÁCH ==================== */
+    .newsdetail-page table {
+        width: 100%;
+        border-collapse: collapse;
+        background-color: #ffffff;
+        border-radius: 8px;
+        overflow: hidden;
+        box-shadow: 0 4px 12px rgba(16, 24, 40, 0.08);
+    }
+
+    .newsdetail-page .rptHed {
+        background-color: #1f2937;
+    }
+
+        .newsdetail-page .rptHed td {
+            padding: 12px 14px;
+            color: #ffffff;
+            font-weight: 600;
+            font-size: 13px;
+            text-transform: uppercase;
+            letter-spacing: 0.03em;
+        }
+
+    .newsdetail-page .rptItem td,
+    .newsdetail-page .rptAlt td {
+        padding: 10px 14px;
+        border-bottom: 1px solid #eef0f3;
+        vertical-align: middle;
+    }
+
+    .newsdetail-page .rptAlt {
+        background-color: #f9fafb;
+    }
+
+        .newsdetail-page .rptItem:hover,
+        .newsdetail-page .rptAlt:hover {
+            background-color: #eef2ff;
+        }
+
+        .newsdetail-page .rptItem img,
+        .newsdetail-page .rptAlt img {
+            border-radius: 4px;
+            border: 1px solid #e5e7eb;
+            object-fit: cover;
+            height: 60px;
+            width: 100px;
+        }
+
+    .newsdetail-page a[id*="lnkDelete"] {
+        color: #dc2626;
+    }
+
+    .newsdetail-page a[id*="lnkUpdate"] {
+        display: inline-block;
+        margin-top: 16px;
+        padding: 8px 16px;
+        background-color: #2563eb;
+        color: #ffffff !important;
+        border-radius: 6px;
+        font-weight: 600;
+        text-decoration: none !important;
+    }
+
+        .newsdetail-page a[id*="lnkUpdate"]:hover {
+            background-color: #1d4ed8;
+        }
+
+    /* Label trong form */
+    .newsdetail-page table td:first-child {
+        font-weight: 600;
+        color: #ffffff;
+        white-space: nowrap;
+        vertical-align: top;
+        padding-top: 12px;
+    }
+
+    /* ==================== FREETEXTBOX (FIX TẬN GỐC) ==================== */
+    .newsdetail-page .FreeTextBox {
+        width: 100% !important;
+        display: block !important;
+        border: 1px solid #cbd5e1 !important;
+        border-radius: 6px;
+        overflow: hidden;
+    }
+
+        /* Ép tất cả các hàng toolbar con phải nằm inline */
+        .newsdetail-page .FreeTextBox .ftb-toolbar {
+            display: inline-block !important; /* Thay vì flex, dùng inline-block để các hàng tự dàn ngang */
+            width: auto !important; /* Không chiếm 100% chiều rộng để không bị đẩy xuống */
+            background: #eef2ff !important;
+            padding: 2px !important;
+            vertical-align: middle !important;
+        }
+
+            /* Ép các table bên trong toolbar không được xuống dòng */
+            .newsdetail-page .FreeTextBox .ftb-toolbar table {
+                display: inline-table !important;
+                float: left !important; /* Dùng float để các bảng xếp cạnh nhau */
+                margin: 0 !important;
+                padding: 0 !important;
+            }
+
+            /* Xóa mọi padding/margin thừa của các nút */
+            .newsdetail-page .FreeTextBox .ftb-toolbar td {
+                padding: 0 1px !important;
+            }
+
+        /* Đảm bảo khung soạn thảo phía dưới hiển thị đúng */
+        .newsdetail-page .FreeTextBox .ftb-main-container {
+            display: block !important;
+            clear: both;
+        }
+        
+/* ==================== FORM ==================== */
+.newsdetail-form {
+    background: #ffffff;
+    padding: 35px 40px;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.07);
+    width: 100%;
+}
+
+    .newsdetail-form td {
+        padding: 5px 0;
+        vertical-align: top;
+    }
+
+        .newsdetail-form td:first-child {
+            width: 160px;
+            font-weight: 600;
+            color: #374151;
+            padding-left: 25px;
+            padding-right: 25px;
+            padding-top: 12px;
+            padding-bottom: 12px;
+        }
+
+    /* ==================== BUTTON & CHECKBOX ==================== */
+    .newsdetail-page input[type="checkbox"] {
+        width: 18px;
+        height: 18px;
+        cursor: pointer;
+    }
+
+    .newsdetail-page input[type="submit"],
+    .newsdetail-page button {
+        padding: 9px 20px;
+        background-color: #2563eb;
+        color: #ffffff;
+        border: none;
+        border-radius: 6px;
+        font-size: 14px;
+        font-weight: 600;
+        cursor: pointer;
+        transition: background-color 0.15s ease;
+    }
+
+        .newsdetail-page input[type="submit"]:hover,
+        .newsdetail-page button:hover {
+            background-color: #1d4ed8;
+        }
+
+/* ==================== RESPONSIVE ==================== */
+@media (max-width: 700px) {
+    .newsdetail-page table,
+    .newsdetail-page tbody,
+    .newsdetail-page tr,
+    .newsdetail-page td {
+        display: block;
+        width: 100%;
+    }
+
+    .newsdetail-page .rptHed {
+        display: none;
+    }
+
+    .newsdetail-page .rptItem,
+    .newsdetail-page .rptAlt {
+        border: 1px solid #eef0f3;
+        border-radius: 8px;
+        margin-bottom: 10px;
+        padding: 8px;
+    }
+}
+
+
+/* ==========================================================================
+   2. TRANG ĐĂNG NHẬP — Login.ascx
+   Bọc trong <div class="login-wrapper"><div class="login-card">
+   ========================================================================== */
+
+.login-wrapper {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #101728 0%, #1e293b 55%, #0f2540 100%);
+    padding: 20px;
+}
+
+.login-card {
+    width: 100%;
+    max-width: 380px;
+    background-color: #ffffff;
+    border-radius: 14px;
+    padding: 40px 36px 36px;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.35);
+    animation: loginRise 0.45s ease-out;
+}
+
+@keyframes loginRise {
+    from {
+        opacity: 0;
+        transform: translateY(14px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.login-logo {
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    color: #2563eb;
+    text-align: center;
+    margin-bottom: 6px;
+}
+
+.login-title {
+    font-size: 20px;
+    font-weight: 700;
+    color: #101728;
+    text-align: center;
+    margin: 0 0 28px;
+}
+
+.login-field {
+    margin-bottom: 18px;
+}
+
+    .login-field label {
+        display: block;
+        font-size: 13px;
+        font-weight: 600;
+        color: #4b5468;
+        margin-bottom: 6px;
+    }
+
+.login-input {
+    width: 100%;
+    padding: 11px 14px;
+    font-size: 14px;
+    font-family: inherit;
+    color: #101728;
+    background-color: #f7f8fa;
+    border: 1.5px solid #e2e5eb;
+    border-radius: 8px;
+    transition: border-color 0.15s ease, box-shadow 0.15s ease, background-color 0.15s ease;
+}
+
+    .login-input::placeholder {
+        color: #a0a6b3;
+    }
+
+    .login-input:focus {
+        outline: none;
+        border-color: #2563eb;
+        background-color: #ffffff;
+        box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.12);
+    }
+
+.login-btn {
+    width: 100%;
+    margin-top: 8px;
+    padding: 12px 0;
+    background-color: #2563eb;
+    color: #ffffff;
+    border: none;
+    border-radius: 8px;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.15s ease, transform 0.1s ease;
+}
+
+    .login-btn:hover {
+        background-color: #1d4ed8;
+    }
+
+    .login-btn:active {
+        background-color: #1e40af;
+        transform: scale(0.99);
+    }
+
+@media (max-width: 400px) {
+    .login-card {
+        padding: 32px 24px 28px;
+        border-radius: 10px;
+    }
+}
+
+
+/* ==========================================================================
+   3. MENU ĐIỀU HƯỚNG — Menu.ascx
+   Bọc trong <nav class="admin-menu">
+   ========================================================================== */
+
+.admin-menu {
+    display: flex;
+    flex-direction: column;
+    background-color: #101728;
+    padding: 18px 0;
+    min-width: 200px;
+    border-radius: 10px;
+    box-shadow: 0 4px 14px rgba(16, 23, 40, 0.15);
+}
+
+.admin-menu-item a {
+    display: block;
+    padding: 12px 22px;
+    font-size: 14px;
+    font-weight: 500;
+    color: #cbd3e1;
+    text-decoration: none;
+    border-left: 3px solid transparent;
+    transition: background-color 0.15s ease, color 0.15s ease, border-color 0.15s ease;
+}
+
+    .admin-menu-item a:hover {
+        background-color: rgba(37, 99, 235, 0.12);
+        color: #ffffff;
+        border-left-color: #2563eb;
+        text-decoration: none;
+    }
+
+    .admin-menu-item a:active {
+        background-color: rgba(37, 99, 235, 0.2);
+    }
+
+.admin-menu-item:not(:last-child) a {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.admin-menu.horizontal {
+    flex-direction: row;
+    min-width: 0;
+    width: 100%;
+    padding: 0;
+    border-radius: 8px;
+}
+
+    .admin-menu.horizontal .admin-menu-item a {
+        border-left: none;
+        border-bottom: 3px solid transparent;
+        padding: 14px 20px;
+    }
+
+        .admin-menu.horizontal .admin-menu-item a:hover {
+            border-left-color: transparent;
+            border-bottom-color: #2563eb;
+        }
+
+    .admin-menu.horizontal .admin-menu-item:not(:last-child) a {
+        border-bottom: none;
+        border-right: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+@media (max-width: 700px) {
+    .admin-menu {
+        min-width: 0;
+        width: 100%;
+        border-radius: 0;
+    }
+
+        .admin-menu.horizontal {
+            flex-direction: column;
+        }
+
+            .admin-menu.horizontal .admin-menu-item a {
+                border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+                border-right: none;
+            }
+}
+
+
+/* ==========================================================================
+   4. DANH MỤC TIN TỨC — NewsCategory.ascx
+   Bọc trong <div class="category-page">
+   ========================================================================== */
+
+.category-page-title {
+    font-size: 18px;
+    font-weight: 700;
+    color: #101728;
+    letter-spacing: 0.02em;
+    margin-bottom: 18px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #e2e5eb;
+}
+
+.category-page table {
+    width: 100%;
+    max-width: 700px;
+    border-collapse: collapse;
+    background-color: #ffffff;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 1px 3px rgba(16, 24, 40, 0.08);
+}
+
+.category-page tr:first-child td {
+    background-color: #1f2937;
+    color: #ffffff;
+    font-weight: 600;
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+    padding: 12px 14px;
+}
+
+.category-page tr:not(:first-child) td {
+    padding: 10px 14px;
+    border-bottom: 1px solid #eef0f3;
+    vertical-align: middle;
+    font-size: 14px;
+}
+
+.category-page tr:not(:first-child):hover td {
+    background-color: #eef2ff;
+}
+
+
+.category-page a {
+    color: #2563eb;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+    .category-page a:hover {
+        text-decoration: underline;
+    }
+
+.category-page td a[id*="lnkDelete"] {
+    color: #dc2626;
+}
+
+.category-page a[id*="lnkAddNew"] {
+    display: inline-block;
+    margin-top: 16px;
+    padding: 9px 18px;
+    background-color: #2563eb;
+    color: #ffffff !important;
+    border-radius: 6px;
+    font-weight: 600;
+    text-decoration: none !important;
+}
+
+    .category-page a[id*="lnkAddNew"]:hover {
+        background-color: #1d4ed8;
+    }
+
+.category-page .category-form {
+    max-width: 460px;
+}
+
+    .category-page .category-form td:first-child {
+        font-weight: 600;
+        color: #374151;
+        width: 130px;
+        background-color: transparent;
+        text-transform: none;
+        letter-spacing: normal;
+        font-size: 14px;
+    }
+
+.category-page input[type="text"] {
+    width: 100%;
+    max-width: 280px;
+    padding: 8px 10px;
+    border: 1px solid #d0d5dd;
+    border-radius: 6px;
+    font-size: 14px;
+    font-family: inherit;
+    color: #2b2f38;
+    background-color: #ffffff;
+}
+
+    .category-page input[type="text"]:focus {
+        outline: none;
+        border-color: #2563eb;
+        box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
+    }
+
+.category-page input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+    cursor: pointer;
+}
+
+.category-page input[type="submit"] {
+    padding: 9px 22px;
+    background-color: #2563eb;
+    color: #ffffff;
+    border: none;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.15s ease;
+}
+
+    .category-page input[type="submit"]:hover {
+        background-color: #1d4ed8;
+    }
+
+@media (max-width: 600px) {
+    .category-page table {
+        max-width: 100%;
+    }
+}
+
+
+/* ==========================================================================
+   5. QUẢN LÝ TÀI KHOẢN — AdminUsers.ascx
+   Bọc trong <div class="adminusers-page">
+   ========================================================================== */
+
+.adminusers-page table {
+    max-width: 520px;
+    border-collapse: collapse;
+}
+
+    .adminusers-page table td {
+        padding: 8px 10px;
+    }
+
+        .adminusers-page table td:first-child {
+            font-weight: 600;
+            color: #374151;
+            width: 110px;
+            vertical-align: middle;
+        }
+
+.adminusers-page input[type="text"],
+.adminusers-page input[type="password"] {
+    width: 100%;
+    max-width: 320px;
+    padding: 8px 10px;
+    border: 1px solid #d0d5dd;
+    border-radius: 6px;
+    font-size: 14px;
+    font-family: inherit;
+    color: #2b2f38;
+    background-color: #ffffff;
+}
+
+    .adminusers-page input[type="text"]:focus,
+    .adminusers-page input[type="password"]:focus {
+        outline: none;
+        border-color: #2563eb;
+        box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
+    }
+
+.adminusers-page select {
+    padding: 8px 10px;
+    border: 1px solid #d0d5dd;
+    border-radius: 6px;
+    background-color: #ffffff;
+    font-size: 14px;
+    color: #2b2f38;
+}
+
+.adminusers-page input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+    cursor: pointer;
+}
+
+.adminusers-page input[type="submit"] {
+    padding: 9px 22px;
+    background-color: #2563eb;
+    color: #ffffff;
+    border: none;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.15s ease;
+}
+
+    .adminusers-page input[type="submit"]:hover {
+        background-color: #1d4ed8;
+    }
+
+
+/* ==========================================================================
+   6. KHUNG TỔNG THỂ TRANG QUẢN TRỊ — AdminControl.ascx
+   Banner + layout (Menu bên trái, nội dung bên phải)
+   Bọc trong <div class="admin-shell">
+   ========================================================================== */
+
+.admin-shell {
+    padding: 18px 24px;
+}
+
+.admin-banner {
+    background-color: #101728;
+    color: #ffffff;
+    padding: 12px 20px;
+    border-radius: 8px;
+    font-size: 14px;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+    .admin-banner a {
+        color: #93c5fd;
+        font-weight: 600;
+    }
+
+        .admin-banner a:hover {
+            color: #ffffff;
+        }
+
+.admin-layout {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.admin-layout-menu {
+    width: 200px;
+    vertical-align: top;
+}
+
+.admin-layout-gap {
+    width: 10px;
+}
+
+.admin-layout-content {
+    vertical-align: top;
+    background-color: #ffffff;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 1px 3px rgba(16, 24, 40, 0.08);
+}
+
+@media (max-width: 800px) {
+    .admin-layout,
+    .admin-layout tbody,
+    .admin-layout tr {
+        display: block;
+        width: 100%;
+    }
+
+    .admin-layout-menu,
+    .admin-layout-gap,
+    .admin-layout-content {
+        display: block;
+        width: 100%;
+    }
+
+    .admin-layout-gap {
+        height: 10px;
+    }
+
+    .admin-banner {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+    }
+}

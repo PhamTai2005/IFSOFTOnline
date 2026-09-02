@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.14.37411.7
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IFSOFTOnline", "IFSOFTOnline.csproj", "{01E3E59D-23A1-47C4-AB9D-6EF905B6CFF5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IFSOFT.Dal", "..\IFSOFT.Dal\IFSOFT.Dal.csproj", "{192DA6E5-6BA2-47F4-9287-82FE3F01E8D7}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{01E3E59D-23A1-47C4-AB9D-6EF905B6CFF5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{01E3E59D-23A1-47C4-AB9D-6EF905B6CFF5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{01E3E59D-23A1-47C4-AB9D-6EF905B6CFF5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{01E3E59D-23A1-47C4-AB9D-6EF905B6CFF5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{192DA6E5-6BA2-47F4-9287-82FE3F01E8D7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{192DA6E5-6BA2-47F4-9287-82FE3F01E8D7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{192DA6E5-6BA2-47F4-9287-82FE3F01E8D7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{192DA6E5-6BA2-47F4-9287-82FE3F01E8D7}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {54B849CB-2608-4FA5-BE47-FE8FF6B453E6}
+	EndGlobalSection
+EndGlobal
